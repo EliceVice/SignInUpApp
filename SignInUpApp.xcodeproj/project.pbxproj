@@ -16,6 +16,7 @@
 		D2051AFB2A957A3700B5FEC7 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2051AFA2A957A3700B5FEC7 /* SignUpStoryboard.storyboard */; };
 		D2051AFD2A957D5800B5FEC7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2051AFC2A957D5800B5FEC7 /* SignInVC.swift */; };
 		D2051B002A9581A300B5FEC7 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */; };
+		D2B333642A9960EF00871F1A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */; };
 		D2EFCD172A9738DB00AE8EF6 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFCD162A9738DB00AE8EF6 /* SignUpVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		D2051AFA2A957A3700B5FEC7 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 		D2051AFC2A957D5800B5FEC7 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		D2EFCD162A9738DB00AE8EF6 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */,
+				D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 			files = (
 				D2051AE22A9576DC00B5FEC7 /* AppDelegate.swift in Sources */,
 				D2051B002A9581A300B5FEC7 /* UIViewExt.swift in Sources */,
+				D2B333642A9960EF00871F1A /* UIViewControllerExt.swift in Sources */,
 				D2051AE42A9576DC00B5FEC7 /* SceneDelegate.swift in Sources */,
 				D2EFCD172A9738DB00AE8EF6 /* SignUpVC.swift in Sources */,
 				D2051AFD2A957D5800B5FEC7 /* SignInVC.swift in Sources */,

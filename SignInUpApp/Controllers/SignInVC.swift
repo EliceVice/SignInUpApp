@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInVC: UIViewController {
+class SignInVC: BaseViewController {
     
     @IBOutlet weak var doorImageView: UIImageView!
     @IBOutlet weak var emailTextField: UITextField!
