@@ -16,6 +16,7 @@
 		D2051AFB2A957A3700B5FEC7 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2051AFA2A957A3700B5FEC7 /* SignUpStoryboard.storyboard */; };
 		D2051AFD2A957D5800B5FEC7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2051AFC2A957D5800B5FEC7 /* SignInVC.swift */; };
 		D2051B002A9581A300B5FEC7 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */; };
+		D22CC5002A9A801400BB36B4 /* VerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22CC4FF2A9A801400BB36B4 /* VerificationService.swift */; };
 		D2B333642A9960EF00871F1A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */; };
 		D2EFCD172A9738DB00AE8EF6 /* SignUpVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EFCD162A9738DB00AE8EF6 /* SignUpVC.swift */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		D2051AFA2A957A3700B5FEC7 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 		D2051AFC2A957D5800B5FEC7 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
+		D22CC4FF2A9A801400BB36B4 /* VerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationService.swift; sourceTree = "<group>"; };
 		D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		D2EFCD162A9738DB00AE8EF6 /* SignUpVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,6 +71,7 @@
 				D2051AFE2A95817E00B5FEC7 /* Extensions */,
 				D2051AF72A9578BB00B5FEC7 /* Controllers */,
 				D2051AF52A95787C00B5FEC7 /* Views */,
+				D22CC4FE2A9A7FFC00BB36B4 /* Services */,
 				D2051AEA2A9576DD00B5FEC7 /* Assets.xcassets */,
 				D2051AEF2A9576DD00B5FEC7 /* Info.plist */,
 				D2051AF62A95788600B5FEC7 /* AppDelegate */,
@@ -112,6 +115,14 @@
 				D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D22CC4FE2A9A7FFC00BB36B4 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D22CC4FF2A9A801400BB36B4 /* VerificationService.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +200,7 @@
 			files = (
 				D2051AE22A9576DC00B5FEC7 /* AppDelegate.swift in Sources */,
 				D2051B002A9581A300B5FEC7 /* UIViewExt.swift in Sources */,
+				D22CC5002A9A801400BB36B4 /* VerificationService.swift in Sources */,
 				D2B333642A9960EF00871F1A /* UIViewControllerExt.swift in Sources */,
 				D2051AE42A9576DC00B5FEC7 /* SceneDelegate.swift in Sources */,
 				D2EFCD172A9738DB00AE8EF6 /* SignUpVC.swift in Sources */,
@@ -345,8 +357,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = SignInStoryboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -373,8 +385,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = SignInStoryboard;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

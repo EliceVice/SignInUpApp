@@ -129,6 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mhA-bS-94G"/>
                     <connections>
+                        <outlet property="descriptionLabel" destination="suD-l2-E3V" id="0G2-lU-qOX"/>
                         <outlet property="doorImageView" destination="sqz-z6-9kH" id="7D5-2Q-fAv"/>
                         <outlet property="emailTextField" destination="YFV-GO-u8j" id="8dw-nu-hdx"/>
                         <outlet property="errorEmailLabel" destination="niH-Oc-Ne9" id="Cna-pp-0Dy"/>

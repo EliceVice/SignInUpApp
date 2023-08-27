@@ -27,6 +27,14 @@ class BaseViewController: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
+    func addGradientToBackground(colors: [CGColor]) {
+        
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.frame
+        gradientLayer.colors = colors
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
