@@ -22,14 +22,26 @@ class SignInVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        UserDefaults.standard.removeObject(forKey: "user-model-key")
+        
         setupUI()
         
-        addGradientToBackground(colors: [UIColor.systemBlue.withAlphaComponent(0.4).cgColor,
-                                         UIColor.systemCyan.withAlphaComponent(0.5).cgColor])
+        addGradientToBackground(colors: [.systemBlue.withAlphaComponent(0.4),
+                                         .systemCyan.withAlphaComponent(0.5)])
         hideKeyboardWhenTappedAround()
     }
     
-    func setupUI() {
+    override func viewDidAppear(_ animated: Bool) {
+        if let savedUserModel = UserDefaults.standard.object(forKey: "user-model-key") as? Data {
+            let decoder = JSONDecoder()
+            if let loadedPerson = try? decoder.decode(UserModel.self, from: savedUserModel) {
+                emailTextField.text = loadedPerson.email
+                passwordTextField.text = loadedPerson.password
+            }
+        }
+    }
+    
+    private func setupUI() {
         // Create a new gradient layer
         
         signInButton.isEnabled = false
@@ -42,10 +54,11 @@ class SignInVC: BaseViewController {
         emailTextField.layer.borderWidth = 0.3
         emailTextField.layer.borderColor = UIColor.systemGray.cgColor
         emailTextField.layer.cornerRadius = 10
+        
         passwordTextField.backgroundColor = UIColor.clear
         passwordTextField.layer.borderWidth = 0.3
         passwordTextField.layer.borderColor = UIColor.systemGray.cgColor
         passwordTextField.layer.cornerRadius = 10
     }
-
+    
 }

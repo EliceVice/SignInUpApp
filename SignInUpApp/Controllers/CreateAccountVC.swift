@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignUpVC: BaseViewController {
+class CreateAccountVC: BaseViewController {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
@@ -34,12 +34,21 @@ class SignUpVC: BaseViewController {
 
         setupUI()
         
-        addGradientToBackground(colors: [UIColor.systemBlue.withAlphaComponent(0.4).cgColor,
-                                         UIColor.systemIndigo.withAlphaComponent(0.4).cgColor])
+//        addGradientToBackground(colors: [UIColor.systemBlue.withAlphaComponent(0.4).cgColor,
+//                                         UIColor.systemIndigo.withAlphaComponent(0.4).cgColor])
+        
+        addGradientToBackground(colors: [.systemBlue.withAlphaComponent(0.4),
+                                         .systemCyan.withAlphaComponent(0.5)])
+        
         startKeyboardObserver()
         hideKeyboardWhenTappedAround()
     }
     
+    @IBAction func nextButtonTapped(_ sender: UIButton) {
+        if let email = emailTF.text, let password = passwordTF.text {
+            performSegue(withIdentifier: "goToWelcomeVC", sender: UserModel(email: email, password: password, name: nameTF.text))
+        }
+    }
     
     @IBAction func emailTFChanged(_ sender: UITextField) {
         if let email = sender.text, VerificationService.isValidEmail(email: email) {
@@ -83,32 +92,10 @@ class SignUpVC: BaseViewController {
             isConfirmationValid = false
         }
         errorConfirmLabel.isHidden = isConfirmationValid
-
-//        print(isConfirmationValid)
         
         if let passConf = sender.text, passConf.isEmpty { errorConfirmLabel.isHidden = true }
-    }
-    
-    
-    private func startKeyboardObserver() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @objc private func keyboardWillShow(notification: Notification) {
-        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
-            return
-        }
-        
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
-    }
-    
-    @objc private func keyboardWillHide() {
-        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        scrollView.contentInset = contentInsets
-        scrollView.scrollIndicatorInsets = contentInsets
+
+        //        print(isConfirmationValid)
     }
     
     private func updateNextButtonState() {
@@ -144,6 +131,7 @@ class SignUpVC: BaseViewController {
         nextButton.alpha = 0.6
         nextButton.tintColor = nextButton.tintColor.withAlphaComponent(0.6)
         nextButton.layer.cornerRadius = nextButton.frame.height / 5
+        nextButton.backgroundColor = .systemBlue
 
         errorEmailLabel.isHidden = true
         errorConfirmLabel.isHidden = true
@@ -165,8 +153,44 @@ class SignUpVC: BaseViewController {
 //        confirmTextField.textContentType = .oneTimeCode
         passwordTF.textContentType = .newPassword
         confirmPasswordTF.textContentType = .newPassword
-
     }
+   
+}
 
+
+// MARK: - Navigation
+
+extension CreateAccountVC {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let verificationVC = segue.destination as? VerificationVC, let user = sender as? UserModel {
+            verificationVC.userModel = user
+        }
+    }
+}
+
+
+// MARK: - Keyboard observer
+
+extension CreateAccountVC {
+    private func startKeyboardObserver() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
+            return
+        }
+        
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: keyboardSize.height, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
+    
+    @objc private func keyboardWillHide() {
+        let contentInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        scrollView.contentInset = contentInsets
+        scrollView.scrollIndicatorInsets = contentInsets
+    }
 }
 
