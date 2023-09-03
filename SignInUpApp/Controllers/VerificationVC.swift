@@ -38,7 +38,6 @@ class VerificationVC: BaseViewController {
         }
         
         if let text = sender.text, text.isEmpty { errorLabel.isHidden = true }
-        
     }
     
     @IBAction func verifyButtonTapped(_ sender: UIButton) {
@@ -48,7 +47,7 @@ class VerificationVC: BaseViewController {
             performSegue(withIdentifier: "goToWelcomeScreen", sender: nil)
         } else {
             
-            // MARK: Additional functionality: if email code is incorrect, delay for 'sleepTime' seconds
+        // MARK: Additional functionality: if email code is incorrect, delay for 'sleepTime' seconds
             
 //            errorLabel.isHidden = false
 //            sender.isUserInteractionEnabled = false
@@ -71,6 +70,7 @@ class VerificationVC: BaseViewController {
         verifyButton.layer.cornerRadius = verifyButton.frame.height / 5
         errorLabel.isHidden = true
         verifyCodeTF.clearButtonMode = .whileEditing
+        verifyCodeTF.keyboardType = .numberPad
     }
     
 }
@@ -98,11 +98,11 @@ extension VerificationVC {
     @objc private func keyboardWillShow(notification: Notification) {
         guard let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else { return }
         guard centerYConstraint.constant == 60 else { return }
-        centerYConstraint.constant -= keyboardSize.height / 3
+        self.centerYConstraint.constant -= keyboardSize.height / 3
     }
     
     @objc private func keyboardWillHide(notification: Notification) {
-        centerYConstraint.constant = 60
+        self.centerYConstraint.constant = 60        
         verifyCodeTFDidEnd(verifyCodeTF)
     }
 }

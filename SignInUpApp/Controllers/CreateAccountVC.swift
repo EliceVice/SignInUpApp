@@ -33,15 +33,11 @@ class CreateAccountVC: BaseViewController {
         super.viewDidLoad()
 
         setupUI()
-        
-//        addGradientToBackground(colors: [UIColor.systemBlue.withAlphaComponent(0.4).cgColor,
-//                                         UIColor.systemIndigo.withAlphaComponent(0.4).cgColor])
-        
         addGradientToBackground(colors: [.systemBlue.withAlphaComponent(0.4),
                                          .systemCyan.withAlphaComponent(0.5)])
-        
         startKeyboardObserver()
         hideKeyboardWhenTappedAround()
+        navigationController?.setNavigationBarHidden(false, animated: false)
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {
@@ -84,10 +80,10 @@ class CreateAccountVC: BaseViewController {
     }
 
     @IBAction func confirmPasswordTFChanged(_ sender: UITextField) {
-        if let pass = passwordTF.text, pass.isEmpty { sender.text = ""; return }
+        if let password = passwordTF.text, password.isEmpty { sender.text = ""; return }
         
-        if let pass = passwordTF.text, let confirmPassword = sender.text, !pass.isEmpty, !confirmPassword.isEmpty {
-            isConfirmationValid = VerificationService.isPasswordConfirmed(pass1: pass, pass2: confirmPassword)
+        if let password = passwordTF.text, let confirmPassword = sender.text, !password.isEmpty, !confirmPassword.isEmpty {
+            isConfirmationValid = VerificationService.isPasswordConfirmed(pass1: password, pass2: confirmPassword)
         } else {
             isConfirmationValid = false
         }
@@ -95,7 +91,7 @@ class CreateAccountVC: BaseViewController {
         
         if let passConf = sender.text, passConf.isEmpty { errorConfirmLabel.isHidden = true }
 
-        //        print(isConfirmationValid)
+//        print(isConfirmationValid)
     }
     
     private func updateNextButtonState() {

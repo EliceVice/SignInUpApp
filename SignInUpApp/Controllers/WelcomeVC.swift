@@ -25,14 +25,8 @@ class WelcomeVC: BaseViewController {
     }
     
     @IBAction func signInButtonTapped() {
-        
         guard let userModel else { return }
-
-        let encoder = JSONEncoder()
-        if let encoded = try? encoder.encode(userModel) {
-            UserDefaults.standard.set(encoded, forKey: "user-model-key")
-        }
-        
+        UserDefaultsService.saveUser(userModel: userModel)
         navigationController?.popToRootViewController(animated: true)
     }
     

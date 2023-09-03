@@ -15,8 +15,12 @@
 		D2051AF92A95795E00B5FEC7 /* SignInStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2051AF82A95795E00B5FEC7 /* SignInStoryboard.storyboard */; };
 		D2051AFB2A957A3700B5FEC7 /* SignUpStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2051AFA2A957A3700B5FEC7 /* SignUpStoryboard.storyboard */; };
 		D2051AFD2A957D5800B5FEC7 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2051AFC2A957D5800B5FEC7 /* SignInVC.swift */; };
-		D2051B002A9581A300B5FEC7 /* UIViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */; };
 		D22CC5002A9A801400BB36B4 /* VerificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D22CC4FF2A9A801400BB36B4 /* VerificationService.swift */; };
+		D26D294A2AA3C41B00061392 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D26D29492AA3C41B00061392 /* HomeVC.swift */; };
+		D278E47B2AA0C786009B4B91 /* UserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D278E47A2AA0C786009B4B91 /* UserDefaultsService.swift */; };
+		D278E47D2AA0C81E009B4B91 /* UserDefaultsExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D278E47C2AA0C81E009B4B91 /* UserDefaultsExt.swift */; };
+		D278E47F2AA0E9EE009B4B91 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D278E47E2AA0E9EE009B4B91 /* TabBarController.swift */; };
+		D278E4832AA0F0B8009B4B91 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D278E4822AA0F0B8009B4B91 /* ProfileVC.swift */; };
 		D2A445012A9CC88300D1059D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A445002A9CC88300D1059D /* UserModel.swift */; };
 		D2A445052A9CCCEB00D1059D /* VerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A445042A9CCCEB00D1059D /* VerificationVC.swift */; };
 		D2B333642A9960EF00871F1A /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */; };
@@ -35,8 +39,12 @@
 		D2051AF82A95795E00B5FEC7 /* SignInStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignInStoryboard.storyboard; sourceTree = "<group>"; };
 		D2051AFA2A957A3700B5FEC7 /* SignUpStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SignUpStoryboard.storyboard; sourceTree = "<group>"; };
 		D2051AFC2A957D5800B5FEC7 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExt.swift; sourceTree = "<group>"; };
 		D22CC4FF2A9A801400BB36B4 /* VerificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationService.swift; sourceTree = "<group>"; };
+		D26D29492AA3C41B00061392 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		D278E47A2AA0C786009B4B91 /* UserDefaultsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsService.swift; sourceTree = "<group>"; };
+		D278E47C2AA0C81E009B4B91 /* UserDefaultsExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExt.swift; sourceTree = "<group>"; };
+		D278E47E2AA0E9EE009B4B91 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		D278E4822AA0F0B8009B4B91 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		D2A445002A9CC88300D1059D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		D2A445042A9CCCEB00D1059D /* VerificationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerificationVC.swift; sourceTree = "<group>"; };
 		D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
@@ -113,6 +121,9 @@
 				D2EFCD162A9738DB00AE8EF6 /* CreateAccountVC.swift */,
 				D2A445042A9CCCEB00D1059D /* VerificationVC.swift */,
 				D2F06E822A9D2295006EC2AE /* WelcomeVC.swift */,
+				D278E47E2AA0E9EE009B4B91 /* TabBarController.swift */,
+				D278E4822AA0F0B8009B4B91 /* ProfileVC.swift */,
+				D26D29492AA3C41B00061392 /* HomeVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -120,8 +131,8 @@
 		D2051AFE2A95817E00B5FEC7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D2051AFF2A9581A300B5FEC7 /* UIViewExt.swift */,
 				D2B333632A9960EF00871F1A /* UIViewControllerExt.swift */,
+				D278E47C2AA0C81E009B4B91 /* UserDefaultsExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -130,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				D22CC4FF2A9A801400BB36B4 /* VerificationService.swift */,
+				D278E47A2AA0C786009B4B91 /* UserDefaultsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -215,9 +227,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D278E47D2AA0C81E009B4B91 /* UserDefaultsExt.swift in Sources */,
+				D278E47F2AA0E9EE009B4B91 /* TabBarController.swift in Sources */,
+				D278E4832AA0F0B8009B4B91 /* ProfileVC.swift in Sources */,
 				D2051AE22A9576DC00B5FEC7 /* AppDelegate.swift in Sources */,
+				D278E47B2AA0C786009B4B91 /* UserDefaultsService.swift in Sources */,
 				D2F06E832A9D2295006EC2AE /* WelcomeVC.swift in Sources */,
-				D2051B002A9581A300B5FEC7 /* UIViewExt.swift in Sources */,
+				D26D294A2AA3C41B00061392 /* HomeVC.swift in Sources */,
 				D2A445012A9CC88300D1059D /* UserModel.swift in Sources */,
 				D22CC5002A9A801400BB36B4 /* VerificationService.swift in Sources */,
 				D2B333642A9960EF00871F1A /* UIViewControllerExt.swift in Sources */,
