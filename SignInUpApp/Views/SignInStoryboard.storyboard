@@ -145,14 +145,6 @@
             </objects>
             <point key="canvasLocation" x="822" y="-2"/>
         </scene>
-        <!--Storyboard Reference-->
-        <scene sceneID="YMf-Iz-lbc">
-            <objects>
-                <viewControllerPlaceholder id="XH3-FV-eaj" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R5N-51-Owa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2030" y="-497"/>
-        </scene>
         <!--SignUpStoryboard-->
         <scene sceneID="Nbu-jL-NZO">
             <objects>
