@@ -30,5 +30,13 @@ class BaseViewController: UIViewController {
     @objc private func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    func addGradientToBackground(colors: [UIColor]) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.frame
+        gradientLayer.colors = colors.map { $0.cgColor }
+        view.layer.insertSublayer(gradientLayer, at: 0)
+    }
+    
 }
 
